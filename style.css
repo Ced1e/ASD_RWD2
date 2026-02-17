@@ -1,175 +1,140 @@
-/* Mobile-First CSS - Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/*body {
-    font-family: Georgia, serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
-}*/
-
-.container {
-    margin: 0 auto;
-    padding: 20px;
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.7;
+  background: url("images/cardboard_bg.jpg") repeat;
 }
 
-/* Header */
-header {
-    background-color: #867346;
-    color: #fff;
-    padding: 5px;
-    border: 2px solid #1e90ff ;
+.page {
+  width: 100%;
 }
 
-.header-content {
-    display: flex;
+.header {
+  width: 100%;
+  height: 110px;
+  background-color: #6b5b3e;
+  position: relative;
 }
 
-header img {
-    width: 300px;
-    height: auto;
-    padding-left: 15px;
-    border: 2px solid #1e90ff;
+.header > img {
+  height: 110px;
+  position: absolute;
+  left: 20px;
+  top: 0;
 }
 
-header p {
-    line-height: 1.5;
-    border: 2px solid #1e90ff;
-    text-align: right;
-    font-size: large;
+#award {
+  position: absolute;
+  left: 400px;
+  top: 50px;
+  transform: translateX(-50%);
 }
 
-
-
-
-header h1 {
-    font-size: 2.5em;
-    font-style: italic;
-    margin: 0;
+#award img {
+  height: 110px;
 }
 
-
-
-/* Main Content - Single Column (Mobile) */
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
 }
 
-main {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+#ticket {
+  position: fixed;
+  left: -90px;
+  top: 180px;
+  z-index: 1000;
 }
 
-aside {
-    background-color: #e8d5c4;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-h2 {
-    color: #8b4513;
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #8b4513;
-    padding-bottom: 10px;
+#ticket img {
+  width: 260px;
 }
 
 
-/* Links */
-a {
-    color: #1e90ff;
-    text-decoration: none;
+.about {
+  background: url("images/background2.gif") repeat;
+  padding: 40px;
 }
 
-a:hover {
-    text-decoration: underline;
+.about h2 {
+  color: #8b0000;
+  font-size: 20px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
 }
 
-/* Sidebar Styling */
-aside h3 {
-    color: #8b4513;
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.about p {
+  font-size: 16px;
+  margin-bottom: 14px;
 }
 
-aside .bean-machine {
-    color: #1e90ff;
-    font-weight: bold;
-    font-size: 1.2em;
+.sidebar {
+  background: url("images/background2.gif") repeat;
+  padding: 40px;
+  position: relative;
 }
 
-aside .benefits {
-    color: #8b4513;
-    font-weight: bold;
-    margin: 15px 0;
+#bag {
+  position: absolute;
+  top: 30px;
+  right: -40px;
+  z-index: 5;
 }
 
-.sidebar-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 5px;
+#bag img {
+  width: 200px;
 }
 
-/* Footer */
-footer {
-    background-color: #6b4423;
-    color: #fff;
+.sidebar h3 {
+  margin-top: 220px;
+  text-align: center;
+  color: #8b0000;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.sidebar p {
+  margin-top: 14px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.footer {
+  width: 100%;
+  background-color: #6b5b3e;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 12px;
+}
+
+@media (max-width: 1023px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  #ticket {
+    left: -60px;
+    width: 220px;
+  }
+
+  #bag {
+    position: static;
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 8px;
-}
+    margin-bottom: 20px;
+  }
 
-footer p {
-    margin: 5px 0;
-    text-align: center;
-}
-
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
-}
-
-/* Responsive Breakpoint at 1024px - Two Column Layout */
-@media (min-width: 1024px) {
-    .header-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-    }
-
-    .header-text {
-        flex: 1;
-        text-align: center;
-    }
-
-    .content-wrapper {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    main {
-        flex: 2;
-    }
-
-    aside {
-        flex: 1;
-        position: sticky;
-        top: 20px;
-    }
+  .sidebar h3 {
+    margin-top: 0;
+  }
 }
